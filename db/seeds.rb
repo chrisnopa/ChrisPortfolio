@@ -1,17 +1,18 @@
+require 'faker'
+
 Blog.destroy_all;
 
-3.times do |topic|
-  Topic.create!(
-    title:"Topic #{topic}"
-    )
-end
+# 3.times do |topic|
+#   Topic.create!(
+#     title:"Topic #{topic}"
+#     )
+# end
 
 
 10.times  do |blog|
   Blog.create!(
     title:Faker::ChuckNorris.fact,
-    body:Faker::Lorem.paragraph,
-    topic_id:Topic.last.id
+    body:Faker::Lorem.paragraph
   )
 end
 
